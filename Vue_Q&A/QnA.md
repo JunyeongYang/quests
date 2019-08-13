@@ -1,4 +1,6 @@
 ### Q&A
+*출처: https://github.com/sudheerj/vuejs-interview-questions-korean/blob/master/README.md#slots%EC%9D%B4%EB%9E%80*
+
   - Q. vuejs 의 특징  
   ```
     - 가상 DOM(Virtual DOM): VueJS에서는 ReactJS, Ember 프레임워크와 유사하게 가상 DOM을 사용합니다. 가상 DOM은 원본 HTML DOM을 표현하는 메모리 상의 가벼운 DOM 트리로, 원본 DOM에 영향을 미치지 않고 업데이트를 할 수 있습니다.  
@@ -78,6 +80,28 @@
 
   - Q. (중간) 믹스인(mixins)이란?  
   - A. 각 컴포넌트에 재사용 가능한 기능을 배포하는 유연한 방법 중 하나  
+
+---
+
+  - Q. (중간) slot이란?
+  - A. Vue에서 ```<slot>```을 이용해 상위 컴포넌트에서 하위 컴포넌트 내부에 사용자 정의의 컨텐츠를 집어 넣을 수 있음
+    ```
+      Vue.component('alert', {
+        template: `
+          <div class="alert-box">
+            <strong>Error!</strong>
+            <slot></slot>
+          </div>
+        `
+      })
+    ```
+    ```<alert>``` 태그 안에 넣은 값은 컴포넌트 내부의 ```<slot>```의 컨텐츠로 들어간다
+    ```
+      <alert>
+        There is an issue with in application.
+      </alert>
+    ```
+
 
 ---
 
